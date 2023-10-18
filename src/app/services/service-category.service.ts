@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 export class ServiceCategoryService {
 
 
-
+ user: any ;
 
   url = 'https://localhost:7091/api/Category/GetAll';
 
