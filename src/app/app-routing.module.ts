@@ -4,15 +4,13 @@ import { RouterModule, Routes} from "@angular/router";
 import {DataGridComponent} from "./components/category/data-grid/data-grid.component";
 
 const routes: Routes = [
-  { path: 'dataGrid' , component: DataGridComponent }
+  { path: 'categories' , component: DataGridComponent },
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    [RouterModule.forRoot(routes)]
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+
 })
 
 

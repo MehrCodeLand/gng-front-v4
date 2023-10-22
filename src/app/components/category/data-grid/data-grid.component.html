@@ -1,8 +1,17 @@
-<p>data-grid works!</p>
-
+<p>data-grid works !</p>
 <dx-data-grid
   [dataSource]="dataSource"
 >
+  <dxi-column
+    dataField="categoryName"
+    caption="Category Name"
+  ></dxi-column>
+
+  <dxi-column
+    dataField="description"
+    caption="Description"
+  ></dxi-column>
+
   <dxo-editing
     mode="row"
     [allowUpdating]="true"
@@ -10,10 +19,8 @@
     [allowDeleting]="true"
     [allowAdding]="true"
   >
-
   >
   </dxo-editing>
-
 </dx-data-grid>
 
 

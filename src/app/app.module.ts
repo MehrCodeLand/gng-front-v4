@@ -3,21 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DataGridComponent } from './components/category/data-grid/data-grid.component';
-import {DxButtonModule, DxDataGridModule} from "devextreme-angular";
+import {DxButtonModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataGridComponent
+    DataGridComponent,
   ],
-    imports: [
-        BrowserModule,
-        RouterModule,
-        DxDataGridModule,
-        HttpClientModule,
-        DxButtonModule
-    ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    RouterModule,
+    DxDataGridModule,
+    HttpClientModule,
+    DxButtonModule,
+    DxFormModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
