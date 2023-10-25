@@ -16,9 +16,9 @@ export class DataGridComponent {
   tempData: any ;
   url = 'https://localhost:7091/api/Category';
   dataSource: CustomStore ;
+  myCategoryData : any ;
 
   constructor(private categoryService  : ServiceCategoryService , private httpClient : HttpClient ) {
-
     this.dataSource = new CustomStore({
       load: () => this.sendRequest(`${this.url}/GetAll` ),
       insert: (values) => this.sendRequest(`${this.url}/`, 'POST', {
@@ -55,8 +55,10 @@ export class DataGridComponent {
 
       case 'PUT':
 
+        let cat = new Category();
+
         let user = JSON.stringify(data.values);
-        result = this.httpClient.put(`${this.url}/${data.key.categoryId}`, data.values , {headers})
+        result = this.httpClient.put(`${this.url}/${data.key.categoryId}` , data.values , {headers})
           .toPromise()
           .then(function(data) {
             throw 'Some error';
@@ -97,7 +99,6 @@ export class DataGridComponent {
 
 
 export class Category {
-  public CategroyId: string = '';
   public CategoryName: string = '';
   public Description: string = '';
 

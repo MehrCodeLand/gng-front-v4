@@ -1,7 +1,13 @@
 <p>data-grid works !</p>
 <dx-data-grid
   [dataSource]="dataSource"
+  keyExpr="categoryId"
 >
+  <dxi-column
+    dataField="categoryId"
+    [visible]="false"
+    type="hidden"
+  ></dxi-column>
   <dxi-column
     dataField="categoryName"
     caption="Category Name"
